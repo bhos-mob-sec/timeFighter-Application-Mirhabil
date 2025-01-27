@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/startGameFragment2">
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.classtask2.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <argument
+            android:name="time"
+            app:argType="string" />
+        <argument
+            android:name="score"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_gameFragment_to_startGameFragment2"
+            app:destination="@id/startGameFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/startGameFragment2"
+        android:name="com.example.classtask2.StartGameFragment"
+        android:label="fragment_start_game"
+        tools:layout="@layout/fragment_start_game" >
+        <action
+            android:id="@+id/action_startGameFragment2_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+</navigation>
